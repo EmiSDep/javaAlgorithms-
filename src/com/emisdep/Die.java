@@ -24,14 +24,14 @@ public class Die {
         return getValue();
     }
 
-    public void multiroll(int n) {
-        int rollCounter = 0;
-        while(rollCounter <= n) {
-            roll();
-            System.out.println("Die: " + getValue());
-            rollCounter +=1;
-        }
-    }
+//    public void multiroll(int n) {
+//        int rollCounter = 0;
+//        while(rollCounter <= n) {
+//            roll();
+//            System.out.println("Die: " + getValue());
+//            rollCounter +=1;
+//        }
+//    }
     public int getNumberOfSides() {
         return numberOfSides;
     }
