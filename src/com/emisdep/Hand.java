@@ -1,47 +1,47 @@
 package com.emisdep;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Hand {
 
-    private Die[] dice;
+    private List<Die> dice = new ArrayList<Die>();
 
-    public Hand() {
-        dice = new Die[5];
-    }
-    private void initAll(int sides) {
-        for(int i = 1; i < 5; i++) {
-            dice[i] = new Die(sides);
+    public Hand(int size) {
+        for (int count = 0; count < size; count++) {
+            dice.add(new Die());
         }
     }
 
-    private void rollAllDice(Random rand){
-        for (Die i : dice) {
-            i.roll(rand);
+    public void rollAllDice(Random rand) {
+        for (var die : dice) {
+            die.roll(rand);
         }
     }
 
     public void allDice() {
-        for (Die i : dice) {
-            System.out.println(i.getValue() + "dice");
+        for (var die : dice) {
+            System.out.println(die.getValue() + "dice");
         }
         System.out.println(("\n"));
     }
 
     public void redo(Random rand, int pickDie) {
-        if (pickDie > dice.length){
-            return;
-        }
-        dice[pickDie].roll(rand);
+        dice.get(pickDie).roll(rand);
     }
 
-    public void redoPicks(Random rand, int[] choices) {
-        for (int i : choices) {
-            dice[i].roll(rand);
+    public void redoPicks(Random rand, List<Integer> choices) {
+        for (int pickDie : choices) {
+            redo(rand, pickDie);
         }
     }
 
+    public int getDieValue(int pos) {
+        return dice.get(pos).getValue();
+    }
 
-
+    public List<Die> getDice() {
+        return dice;
+    }
 }
