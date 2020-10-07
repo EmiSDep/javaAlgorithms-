@@ -1,5 +1,6 @@
 package com.emisdep;
 
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -25,14 +26,14 @@ public class Main {
         int reroll = myScan.nextInt();
 
         //first reroll
-        myHand.redo(rand, reroll);
+        myHand.redo(rand, 1);
         System.out.println("Dice " + reroll + " new result: " + myHand.getDieValue(reroll) + "\n");
 
         //second reroll
         System.out.println("Choose another dice to reroll.");
         int reroll2 = myScan.nextInt();
 
-        myHand.redo(rand, reroll2);
+        myHand.redo(rand, 2);
         System.out.println("Dice " + reroll2 + " new result: " + myHand.getDieValue(reroll2) + " ");
     }
 }
