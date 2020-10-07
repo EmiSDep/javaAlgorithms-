@@ -10,18 +10,19 @@ public class Main {
         Hand myHand = new Hand(5);
 
         myHand.rollAllDice(rand);
-        System.out.println(myHand.getDieValue(0) + " ");
-        System.out.println(myHand.getDieValue(1) + " ");
-        System.out.println(myHand.getDieValue(3) + " ");
+        System.out.println(myHand.getDice());
+        System.out.print(myHand.getDieValue(0) + " ");
+        System.out.print(myHand.getDieValue(1) + " ");
+        System.out.print(myHand.getDieValue(3) + " ");
         System.out.print("\n");
         myHand.rollAllDice(rand);
-        System.out.println(myHand.getDieValue(0) + " ");
-        System.out.println(myHand.getDieValue(1) + " ");
-        System.out.println(myHand.getDieValue(3) + " ");
+        System.out.print(myHand.getDieValue(0) + " ");
+        System.out.print(myHand.getDieValue(1) + " ");
+        System.out.print(myHand.getDieValue(3) + " ");
         myHand.redo(rand, 1);
         myHand.redo(rand, 3);
         myHand.getDieValue(1);
-        //myHand.allDice();
+        myHand.allDice();
 
 
     }
