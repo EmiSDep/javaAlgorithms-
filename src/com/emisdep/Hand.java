@@ -14,7 +14,7 @@ public class Hand {
         }
     }
 
-    public void rollAllDice(Random rand) {
+    public void rollAllDice(Random rand, List<Integer> integers) {
         for (var die : dice) {
             die.roll(rand);
         }
